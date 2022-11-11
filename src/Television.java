@@ -2,7 +2,7 @@ public class Television extends Electrodomestico{
     
     private double resolucion ;
     private boolean sincronizadorTdt;
-
+    private double precioSOlo;
     private final double RESOLUCION_DEF = 20;
 
     
@@ -24,6 +24,7 @@ public class Television extends Electrodomestico{
     public Television(double precioBase, String color, char consumoEnergetico, double peso, double resolucion,
             boolean sincronizadorTdt) {
         super(precioBase, color, consumoEnergetico, peso);
+        precioSOlo = precioBase;
         this.resolucion = resolucion;
         this.sincronizadorTdt = sincronizadorTdt;
     }
@@ -44,7 +45,7 @@ public class Television extends Electrodomestico{
         super.precioFinal();
         double porPrecio;
         if (resolucion > 40) {
-            porPrecio = getPrecioBase()*30/100;
+            porPrecio = precioSOlo*30/100;
             precioBase += porPrecio;
         }if (sincronizadorTdt == true){
             precioBase += 50;

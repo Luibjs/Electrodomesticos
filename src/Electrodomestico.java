@@ -28,12 +28,11 @@ public class Electrodomestico {
         this.consumoEnergetico= CONSUMO_DEF;
     }
 
-    public Electrodomestico(double precioBase, String color, char consumoEnergetico, double peso) {
+    public Electrodomestico(double precioBase, String color, char consumo, double peso) {
         this.precioBase = precioBase;
         this.color = color;
-        this.consumoEnergetico = consumoEnergetico;
         this.peso = peso;
-        comprobarConsumoEnergetico(consumoEnergetico);
+        comprobarConsumoEnergetico(consumo);
         comprobarColor(color);
     }
 
@@ -79,6 +78,7 @@ public class Electrodomestico {
         for (char u : letraConsumo) {
             if (u == letra) {
                 consumoEnergetico = letra;
+                break;
             }else{
                 consumoEnergetico = CONSUMO_DEF;
             }
@@ -91,6 +91,7 @@ public class Electrodomestico {
         for (String string : colorElec) {
             if (string.equals(color1)) {
                 color = color1;
+                break;
             }else{
                 color = COLOR_DEF;
             }
@@ -120,7 +121,7 @@ public class Electrodomestico {
                 precioBase +=30;
                 break;
                 
-            case 'f':
+            case 'F':
                 precioBase +=10;
                 break;    
         }
